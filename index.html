@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function checkAccount(acc) {
+        regexp = /^[_a-z0-9]{6,}$/;
+        if (regexp.test(acc)){
+            return true;
+        }
+        return false;
+    }
+
+    let arrTrue = ['123abc_', '_abc123', '______', '123456', 'abcdefg'];
+    let arrFalse = ['.@', '12345', '1234_', 'abcde '];
+
+    for (i = 0; i < arrTrue.length; i++) {
+        document.writeln(arrTrue[i] + ' == ' + checkAccount(arrTrue[i]) + '<br/>');
+    }
+    for (j = 0; j < arrFalse.length; j++) {
+        document.writeln(arrFalse[j] + ' == ' + checkAccount(arrFalse[j]) + '<br/>');
+    }
+</script>
+</body>
+</html>
